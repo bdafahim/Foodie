@@ -7,13 +7,21 @@ import {
     FlatList,
 } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
+import Colors from "../constants/Colors";
 
 const CategoriesScreen = (props) => {
     const renderGridItem = (itemData) => {
         return (
-            <View style={styles.gridItemStyle}>
-                <Text>{itemData.item.title}</Text>
-            </View>
+            <TouchableOpacity
+                style={styles.gridItemStyle}
+                onPress={() => {
+                    props.navigation.navigate({ routeName: "CategoryMeals" });
+                }}
+            >
+                <View>
+                    <Text>{itemData.item.title}</Text>
+                </View>
+            </TouchableOpacity>
         );
     };
     console.log(props);
@@ -25,16 +33,16 @@ const CategoriesScreen = (props) => {
                 renderItem={renderGridItem}
                 numColumns={2}
             />
-            <TouchableOpacity
-                style={styles.categoryButton}
-                onPress={() => {
-                    props.navigation.navigate({ routeName: "CategoryMeals" });
-                }}
-            >
-                <Text style={styles.buttontext}>Go To Meals</Text>
-            </TouchableOpacity>
         </View>
     );
+};
+
+CategoriesScreen.navigationOptions = {
+    headerTitle: "Meal Categories",
+    headerStyle: {
+        backgroundColor: "",
+    },
+    headerTintColor: Colors.primaryColor,
 };
 
 const styles = StyleSheet.create({
