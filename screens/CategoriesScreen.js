@@ -1,11 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    FlatList,
+} from "react-native";
+import { CATEGORIES } from "../data/dummy-data";
 
 const CategoriesScreen = (props) => {
+    const renderGridItem = (itemData) => {
+        return (
+            <View style={styles.gridItemStyle}>
+                <Text>{itemData.item.title}</Text>
+            </View>
+        );
+    };
     console.log(props);
     return (
         <View style={styles.container}>
-            <Text>Categories Screen</Text>
+            <FlatList
+                keyExtractor={(item, index) => item.id}
+                data={CATEGORIES}
+                renderItem={renderGridItem}
+                numColumns={2}
+            />
             <TouchableOpacity
                 style={styles.categoryButton}
                 onPress={() => {
@@ -22,7 +41,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
-        alignItems: "center",
         justifyContent: "center",
     },
     categoryButton: {
@@ -31,6 +49,11 @@ const styles = StyleSheet.create({
     },
     buttontext: {
         color: "white",
+    },
+    gridItemStyle: {
+        flex: 1,
+        margin: 15,
+        height: 150,
     },
 });
 

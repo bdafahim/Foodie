@@ -11,7 +11,7 @@ const CategoryMealScreen = (props) => {
                     props.navigation.navigate({ routeName: "MealDetail" });
                 }}
             >
-                <Text style={styles.buttonText}>Go To Meals</Text>
+                <Text style={styles.buttonText}>Go To MealDetails</Text>
             </TouchableOpacity>
         </View>
     );
