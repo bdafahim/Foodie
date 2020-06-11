@@ -1,10 +1,14 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { CATEGORIES } from "../data/dummy-data";
 
 const CategoryMealScreen = (props) => {
+    const catId = props.navigation.getParam("categoryId");
+    const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
     return (
         <View style={styles.container}>
             <Text>CategoryMealScreen</Text>
+            <Text>{selectedCategory.title}</Text>
             <TouchableOpacity
                 style={styles.mealDetailsButton}
                 onPress={() => {
