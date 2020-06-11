@@ -1,9 +1,9 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 const CategoryMealScreen = (props) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>CategoryMealScreen</Text>
         </View>
     );
