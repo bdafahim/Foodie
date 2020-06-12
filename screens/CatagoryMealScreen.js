@@ -28,10 +28,6 @@ CategoryMealScreen.navigationOptions = (navigationData) => {
 
     return {
         headerTitle: selectedCategory.title,
-        headerStyle: {
-            backgroundColor: "",
-        },
-        headerTintColor: Colors.primaryColor,
     };
 };
 
