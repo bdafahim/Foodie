@@ -27,6 +27,7 @@ class Meal {
         this.isVegan = isVegan;
         this.isVegetarian = isVegetarian;
         this.isLactosefree = isLactosefree;
-        t;
     }
 }
+
+export default Meal;
