@@ -8,6 +8,15 @@ import MealDetailScreen from "../screens/MealDetailScreen";
 import Colors from "../constants/Colors";
 import FavoriteScreen from "../screens/FavoriteScreen";
 import { Ionicons } from "@expo/vector-icons";
+import MealDetailsScreen from "../screens/MealDetailScreen";
+
+const defaultStackNAvOptions = {
+    headerTitle: "A screen",
+    headerStyle: {
+        backgroundColor: "",
+    },
+    headerTintColor: Colors.primaryColor,
+};
 
 const MealsNavigator = createStackNavigator(
     {
@@ -21,12 +30,17 @@ const MealsNavigator = createStackNavigator(
     },
     {
         initialRouteName: "Categories",
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: "",
-            },
-            headerTintColor: Colors.primaryColor,
-        },
+        defaultNavigationOptions: defaultStackNAvOptions,
+    }
+);
+
+const FavNavigator = createStackNavigator(
+    {
+        Favorites: FavoriteScreen,
+        MealDetail: MealDetailsScreen,
+    },
+    {
+        defaultNavigationOptions: defaultStackNAvOptions,
     }
 );
 
@@ -47,7 +61,7 @@ const MealsFavTabNavigator = createBottomTabNavigator(
             },
         },
         Favorites: {
-            screen: FavoriteScreen,
+            screen: FavNavigator,
             navigationOptions: {
                 tabBarIcon: (tabinfo) => {
                     return (
