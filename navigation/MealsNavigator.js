@@ -17,6 +17,12 @@ const defaultStackNAvOptions = {
     headerStyle: {
         backgroundColor: "",
     },
+    headerBackTitleStyle: {
+        fontFamily: "open-sans",
+    },
+    headerTitleStyle: {
+        fontFamily: "open-sans-bold",
+    },
     headerTintColor: Colors.primaryColor,
 };
 
