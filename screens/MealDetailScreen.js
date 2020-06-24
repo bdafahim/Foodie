@@ -1,11 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import Meals from "../models/meal";
 import { MEALS } from "../data/dummy-data";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButton";
-import Color from "../constants/Colors";
-import Colors from "../constants/Colors";
 
 const MealDetailsScreen = (props) => {
     const mealId = props.navigation.getParam("mealid");
